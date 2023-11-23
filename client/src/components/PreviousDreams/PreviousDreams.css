@@ -1,0 +1,22 @@
+.previous-dreams {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+  }
+  
+  .previous-dreams h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .dreams-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .dream-entry {
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+  }
+  
