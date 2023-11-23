@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Navigation from './components/Navigation';
+import Navigation from './components/Navigation/Navigation';
 import NewDreamEntry from './components/NewDreamEntry';
 import PreviousDreams from './components/PreviousDreams';
 import DreamMeanings from './components/DreamMeanings';
