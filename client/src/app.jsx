@@ -1,10 +1,13 @@
 import React from 'react';
-import { UserProvider, useUser } from './contexts/UserContext';
+import { UserProvider } from './contexts/UserContext';
+import Header from './components/Header';
 import Navigation from './components/Navigation';
 import NewDreamEntry from './components/NewDreamEntry';
 import PreviousDreams from './components/PreviousDreams';
 import DreamMeanings from './components/DreamMeanings';
 import Login from './components/Login';
+import SignUp from './components/SignUp';
+import { useUser } from './contexts/UserContext';
 import './App.css';
 const MainContent = () => {
   const { user, logout } = useUser();
@@ -13,7 +16,7 @@ const MainContent = () => {
     setDreams([...dreams, newDream]);
   };
   if (!user) {
-    return <Login />;
+    return <Login />; // Or <SignUp /> based on the desired user flow
   }
   return (
     <>
@@ -28,6 +31,7 @@ const App = () => {
   return (
     <UserProvider>
       <div className="App">
+        <Header />
         <MainContent />
       </div>
     </UserProvider>
