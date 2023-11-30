@@ -1,0 +1,25 @@
+.sign-up-page {
+  padding: 1rem;
+  max-width: 400px;
+  margin: auto;
+}
+.sign-up-page h1 {
+  text-align: center;
+}
+.form-field {
+  margin-bottom: 1rem;
+}
+.form-field label {
+  display: block;
+}
+.form-field input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+}
+.sign-up-page button {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 1rem;
+}
+  
