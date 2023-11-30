@@ -8,18 +8,11 @@
 .home-page p {
   margin-bottom: 2rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
+.navigation-links a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: #007BFF;
+}
 
 
 
