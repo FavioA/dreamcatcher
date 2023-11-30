@@ -1,52 +1,43 @@
-// App.js
-import React, { useState } from 'react';
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { UserProvider } from './contexts/UserContext';
-import { useUser } from './contexts/UserContext';
 import Header from './components/Header';
-import Navigation from './components/Navigation';
-import NewDreamEntry from './components/NewDreamEntry';
-import PreviousDreams from './components/PreviousDreams';
-import DreamMeanings from './components/DreamMeanings';
-import Login from './components/Login';
-import SignUp from './components/SignUp';
 import Footer from './components/Footer';
+import Navigation from './components/Navigation';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import DreamJournalPage from './pages/DreamJournalPage';
 import './App.css';
-
-const MainContent = () => {
-  const { user, logout } = useUser();
-  const [dreams, setDreams] = useState([]); // State for storing dream entries
-
-  const saveDreamEntry = (newDream) => {
-    setDreams([...dreams, newDream]);
-  };
-
-  if (!user) {
-    return <Login />; // Or <SignUp /> based on the desired user flow
-  }
-
-  return (
-    <>
-      <Navigation onLogout={logout} />
-      <NewDreamEntry onSaveDream={saveDreamEntry} />
-      <PreviousDreams dreams={dreams} />
-      <DreamMeanings />
-    </>
-  );
-};
-
 const App = () => {
   return (
     <UserProvider>
-      <div className="App">
-        <Header />
-        <MainContent />
-        <Footer />
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Navigation />
+          <Switch>
+            <Route path="/" exact component={HomePage} />
+            <Route path="/login" component={LoginPage} />
+            <Route path="/signup" component={SignUpPage} />
+            <Route path="/dream-journal" component={DreamJournalPage} />
+            {/* Add additional routes as needed */}
+          </Switch>
+          <Footer />
+        </div>
+      </Router>
     </UserProvider>
   );
 };
-
 export default App;
+
+
+
+
+
+
+
+
 
 
 
