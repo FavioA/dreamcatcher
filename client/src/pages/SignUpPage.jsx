@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useUser } from '../contexts/UserContext';
 import './SignUpPage.css'; // Assuming you have corresponding CSS
 const SignUpPage = () => {
@@ -7,7 +7,7 @@ const SignUpPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { signUp } = useUser();
-  const history = useHistory();
+  const navigate = useNavigate();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
