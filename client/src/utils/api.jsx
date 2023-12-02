@@ -50,4 +50,21 @@ export const saveDreamEntry = async (dreamEntry, token) => {
         throw error;
     }
 };
-// ... Add more API functions as needed
+export const fetchDreamEntries = async (token) => {
+    try {
+        const response = await fetch(`${API_BASE_URL}/dreams`, {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`, // Assuming JWT Bearer Token
+            },
+        });
+        if (!response.ok) {
+            throw new Error('Failed to fetch dream entries');
+        }
+        const dreamEntries = await response.json();
+        return dreamEntries; // Return dream entries
+    } catch (error) {
+        console.error('Error fetching dream entries:', error);
+        throw error;
+    }
+};
