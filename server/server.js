@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const { ApolloServer } = require('@apollo/server');
 const {typeDefs, resolvers} = require('./schemas');
-const auth = require('./utils/auth');
 
 const authRoutes = require('./routes/authRoutes');
 const dreamRoutes = require('./routes/dreamRoutes');

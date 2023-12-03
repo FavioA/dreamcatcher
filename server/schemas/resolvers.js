@@ -1,6 +1,6 @@
-const User = require('./models/User');
-const Dream = require('./models/Dream');
-const bcrypt = require('bcryptjs');
+const User = require('../models/User');
+const Dream = require('../models/Dream');
+const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { AuthenticationError } = require('apollo-server-express');
 
