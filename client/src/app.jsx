@@ -9,7 +9,11 @@ import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUpPage';
 import DreamJournalPage from './pages/DreamJournalPage';
 import './App.css';
+
 const App = () => {
+  // You might want to manage your authentication state here
+  // const isAuthenticated = ...;
+
   return (
     <UserProvider>
       <Router>
@@ -17,10 +21,11 @@ const App = () => {
           <Header />
           <Navigation />
           <Routes>
-            <Route path="/" exact component={HomePage} />
-            <Route path="/login" component={LoginPage} />
-            <Route path="/signup" component={SignUpPage} />
-            <Route path="/dream-journal" component={DreamJournalPage} />
+            <Route path="/" element={<HomePage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignUpPage />} />
+            <Route path="/dream-journal" element={<DreamJournalPage />} />
+            {/* Add additional routes as needed */}
           </Routes>
           <Footer />
         </div>
@@ -28,7 +33,9 @@ const App = () => {
     </UserProvider>
   );
 };
+
 export default App;
+
 
 
 
