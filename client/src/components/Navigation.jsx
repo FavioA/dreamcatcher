@@ -1,21 +1,25 @@
 import React from 'react';
-import './Navigation.css';
-import PropTypes from 'prop-types';
+import { NavLink } from 'react-router-dom';
 
-const Navigation = ({ isAuthenticated, onLogout }) => {
+const Navigation = ({ isAuthenticated }) => {
   return (
     <nav>
-      <span className="app-title">DreamCatcher</span>
-      {isAuthenticated && (
-        <button className="logout-button" onClick={onLogout}>
-          Logout
-        </button>
+      <NavLink to="/" className={({ isActive }) => isActive ? 'active' : ''}>Home</NavLink>
+      {isAuthenticated ? (
+        <>
+          {/* Show links when the user is authenticated */}
+          <NavLink to="/dream-journal" className={({ isActive }) => isActive ? 'active' : ''}>Dream Journal</NavLink>
+          {/* Add other authenticated links here */}
+        </>
+      ) : (
+        <>
+          {/* Show links when the user is not authenticated */}
+          <NavLink to="/login" className={({ isActive }) => isActive ? 'active' : ''}>Login</NavLink>
+          <NavLink to="/signup" className={({ isActive }) => isActive ? 'active' : ''}>Sign Up</NavLink>
+        </>
       )}
     </nav>
   );
 };
-Navigation.propTypes = {
-  isAuthenticated: PropTypes.bool.isRequired,
-  onLogout: PropTypes.func.isRequired
-};
+
 export default Navigation;
